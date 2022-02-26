@@ -1,3 +1,4 @@
 .out
 *.o
 *.old
+main.c
