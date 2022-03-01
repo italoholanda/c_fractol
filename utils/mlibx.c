@@ -6,18 +6,18 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 18:14:05 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/02/26 18:14:07 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/02/26 19:04:36 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../fractol.h"
 
-int	mlibx_handle_no_event(void *data)
+int mlibx_handle_no_event(void *data)
 {
 	return (0);
 }
 
-int	mlibx_handle_input(int keysym, t_data *data)
+int mlibx_handle_input(int keysym, t_data *data)
 {
 	if (keysym == XK_Escape)
 		mlx_destroy_window(data->mlx_ptr, data->win_ptr);
@@ -35,11 +35,13 @@ int mlibx_init_screen(t_data data)
 		free(data.win_ptr);
 		return (MLX_ERROR);
 	}
+	return (0);
 }
 
-int mlibx_keep_screen(t_data data, int f_no_event, int f_input)
+int mlibx_keep_screen(t_data data, int *f_no_event, int *f_input)
 {
-	mlx_loop_hook(data.mlx_ptr, &f_no_event, &data);
-	mlx_key_hook(data.win_ptr, &f_input, &data);
+	mlx_loop_hook(data.mlx_ptr, f_no_event, &data);
+	mlx_key_hook(data.win_ptr, f_input, &data);
 	mlx_loop(data.mlx_ptr);
+	return (0);
 }
