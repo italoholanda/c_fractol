@@ -6,13 +6,14 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 18:27:30 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/02 12:10:17 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:52:18 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <X11/keysym.h>
 #include <mlx.h>
+#include <math.h>
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
@@ -42,17 +43,11 @@ typedef struct s_complex
 	long double b;
 } t_complex;
 
-
-
 /*
 --------------------------------------------------------------------------------
     MiniLibX Aux
 --------------------------------------------------------------------------------
 */
-int	mlibx_handle_no_event(void *data);
-int	mlibx_handle_input(int keysym, t_mlx *data);
-int mlibx_init_screen(t_mlx data);
-int mlibx_keep_screen(t_mlx data, int *f_no_event, int *f_input);
 void draw_pixel_img(t_img *img, int x, int y, int color);
 void draw_pixel(t_img img, long double x, long double y);
 
@@ -63,6 +58,13 @@ void draw_pixel(t_img img, long double x, long double y);
 */
 t_complex f_convertToComplex(double sf, long int w, long int h);
 double get_module(double x, double y);
+
+/*
+--------------------------------------------------------------------------------
+    Main
+--------------------------------------------------------------------------------
+*/
+int	fractol(void);
 
 
 

@@ -1,5 +1,4 @@
 *.out
 *.o
 *.old
-main.c
 test.c

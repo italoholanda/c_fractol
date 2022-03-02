@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 18:39:41 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/02 12:26:00 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:42:56 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int fractol(void)
 			}
 		}
 	}
-
 	mlx_put_image_to_window(mlx.mlx_ptr, mlx.win_ptr, img.img_ptr, 0, 0);
 	mlx_loop(mlx.mlx_ptr);
+	return (0);
 }

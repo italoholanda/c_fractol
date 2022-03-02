@@ -1,17 +1,19 @@
 # UTILS FUNCTIONS
-UTILS = utils/mlibx.c
+UTILS = \
+	utils/mlibx.c \
+	utils/complex.c
 
-# FRACTOL MAIN FUNCTION
+# FRACTOL FUNCTION
 FRACTOL = fractol.c
 
-# SOURCE CODE
-SOURCE = $(UTILS)$(FRACTOL)
+# MAIN
+MAIN = main.c
 
-# BIN FILES
-BIN = $(SOURCE:.c=.o)
+# SOURCE CODE
+SOURCE = $(MAIN) $(UTILS) $(FRACTOL)
 
 # STATIC FRACTOL LIB
-NAME = fractol.a
+NAME = fractol
 
 # DEFAULT COMPILER
 COMPILER = gcc
@@ -24,11 +26,7 @@ XFLAGS = -lX11 -lXext -lmlx -lm
 
 # COMPILE AND BUILD STATIC LIB
 $(NAME):
-		$(COMPILER) -c  $(UTILS) $(DFLAGS) $(XFLAGS)
-		mv *.o ./utils/
-		$(COMPILER) -c  $(FRACTOL) $(DFLAGS) $(XFLAGS)
-		mv *.o ./
-		ar rcs $(NAME) $(BIN)
+		$(COMPILER) -o $(NAME) $(SOURCE) $(DFLAGS) $(XFLAGS)
 
 # VERIFY DEPS
 all:	$(NAME)
