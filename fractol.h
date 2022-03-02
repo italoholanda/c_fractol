@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 18:27:30 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/02/26 19:01:51 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/02 12:10:17 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,30 @@
 # define MLX_ERROR 1
 # define SIZEX 300
 # define SIZEY 300
+# define ITERATIONS 1000
 
-typedef struct s_data
+typedef struct s_mlx
 {
 	void	*mlx_ptr;
 	void	*win_ptr;
-}	t_data;
+}	t_mlx;
+
+typedef struct s_img
+{
+	void *img_ptr;
+	char *addr;
+	int bits_per_pixel;
+	int line_length;
+	int endian;
+} t_img;
+
+typedef struct s_complex
+{
+	long double a;
+	long double b;
+} t_complex;
+
+
 
 /*
 --------------------------------------------------------------------------------
@@ -32,8 +50,20 @@ typedef struct s_data
 --------------------------------------------------------------------------------
 */
 int	mlibx_handle_no_event(void *data);
-int	mlibx_handle_input(int keysym, t_data *data);
-int mlibx_init_screen(t_data data);
-int mlibx_keep_screen(t_data data, int *f_no_event, int *f_input);
+int	mlibx_handle_input(int keysym, t_mlx *data);
+int mlibx_init_screen(t_mlx data);
+int mlibx_keep_screen(t_mlx data, int *f_no_event, int *f_input);
+void draw_pixel_img(t_img *img, int x, int y, int color);
+void draw_pixel(t_img img, long double x, long double y);
+
+/*
+--------------------------------------------------------------------------------
+    Complex Utils
+--------------------------------------------------------------------------------
+*/
+t_complex f_convertToComplex(double sf, long int w, long int h);
+double get_module(double x, double y);
+
+
 
 #endif
