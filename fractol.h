@@ -10,12 +10,18 @@
 
 typedef struct s_img
 {
-	void *img;
-	char *addr;
-	int bpp;
-	int line_len;
-	int endian;
+	void	*img;
+	char	*addr;
+	int		bpp;
+	int		line_len;
+	int		endian;
 }	t_img;
+
+typedef struct s_mlx
+{
+	void	*ptr;
+	void	*win;
+}	t_mlx;
 
 typedef struct s_pos
 {

@@ -2,8 +2,7 @@
 
 int main(void)
 {
-	void *mlx;
-	void *mlx_win;
+	t_mlx mlx;
 	double tempx;
 	double sf = 2;
 	t_pos v_whconvertToComplex;
@@ -11,9 +10,9 @@ int main(void)
 	t_img img;
 	int N = 50;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, SW, SW, "Fractal");
-	img.img = mlx_new_image(mlx, SW, SW);
+	mlx.ptr = mlx_init();
+	mlx.win = mlx_new_window(mlx.ptr, SW, SW, "Fractal");
+	img.img = mlx_new_image(mlx.ptr, SW, SW);
 	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
 
 	for (int h = 0; h < SW; h++)
@@ -42,6 +41,6 @@ int main(void)
 		}
 	}
 
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
+	mlx_put_image_to_window(mlx.ptr, mlx.win, img.img, 0, 0);
+	mlx_loop(mlx.ptr);
 }
