@@ -30,7 +30,7 @@ clean:
 ## REMOVE ALL ##
 fclean: clean
 	rm -rf ${STATIC}
-	rf -rf ${NAME}
+	rm -rf ${NAME}
 
 ## REMAKE ALL ##
 re: fclean ${NAME}
