@@ -1,43 +1,36 @@
-# UTILS FUNCTIONS
-UTILS = \
-	utils/mlibx.c \
-	utils/complex.c
+## GENERAL ##
+NAME:= fractol
+CC:= gcc
+SFLAGS:= -Wall -Wextra -Werror
+XFLAGS:= -lm -lbsd -lmlx -lXext -lX11
 
-# FRACTOL FUNCTION
-FRACTOL = fractol.c
+## DOCUMENT ##
+STATIC:= fractol.a
+MAIN:= main.c
+SRC:= mandelbrot.c mlibx.c complex.c
+BIN:= ${SRC:.c=.o}
 
-# MAIN
-MAIN = main.c
+## MAKE NAME ##
+$(NAME): ${STATIC}
+	${CC} ${SFLAGS} -I -c -O3 -fsanitize=leak ${MAIN} ${STATIC} ${XFLAGS} -o ${NAME}
 
-# SOURCE CODE
-SOURCE = $(MAIN) $(UTILS) $(FRACTOL)
+## MAKE STATIC ##
+$(STATIC): ${BIN}
+	ar rcs ${STATIC} ${BIN}
 
-# STATIC FRACTOL LIB
-NAME = fractol
+## MAKE BIN ##
+$(BIN):
+	${CC} ${SFLAGS} -c -O3 ${SRC} ${XFLAGS}
 
-# DEFAULT COMPILER
-COMPILER = gcc
 
-# DEFAULT COMPILER FLAGS
-DFLAGS = -Wall -Wextra -Werror
-
-# LIBX AND MATH COMPILER FLAGS
-XFLAGS = -lX11 -lXext -lmlx -lm
-
-# COMPILE AND BUILD STATIC LIB
-$(NAME):
-		$(COMPILER) -o $(NAME) $(SOURCE) $(DFLAGS) $(XFLAGS)
-
-# VERIFY DEPS
-all:	$(NAME)
-
-# REMOVE ALL BIN FILES
+## REMOVE BIN ##
 clean:
-		rm -rf $(BIN)
+	rm -rf ${BIN}
 
-# REMOVE STATIC FRACTOL LIB
-fclean:	clean
-		rm -rf $(NAME)
+## REMOVE ALL ##
+fclean: clean
+	rm -rf ${STATIC}
+	rf -rf ${NAME}
 
-# REBUILD
-re:		fclean all
+## REMAKE ALL ##
+re: fclean ${NAME}
