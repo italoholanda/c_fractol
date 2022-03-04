@@ -5,6 +5,7 @@ Fractals are geometric patterns that can be visible in whatever scale of a figur
 
 ## About the project
 It is a 42 Network Computer Graphics project about algebraic fractals. Here, we will study the following implementations: Mandelbrot and Julia.
+
 So, let's generate this using linear equations and recursion.
 
 ### Mandelbrot
