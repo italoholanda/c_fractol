@@ -1,4 +1,4 @@
-#include "fractol.h"
+#include "../include/fractol.h"
 
 #define MANDELBROT_RECURSION 50
 

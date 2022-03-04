@@ -1,4 +1,4 @@
-#include "fractol.h"
+#include "../include/fractol.h"
 
 t_pos get_complex_conversion(double sf, long int w, long int h)
 {

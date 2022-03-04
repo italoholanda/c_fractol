@@ -6,9 +6,9 @@ XFLAGS:= -lm -lbsd -lmlx -lXext -lX11
 
 ## DOCUMENT ##
 STATIC:= fractol.a
-MAIN:= main.c
-SRC:= mandelbrot.c mlibx.c complex.c get_fractal.c
-BIN:= ${SRC:.c=.o}
+MAIN:= src/main.c
+SRC:= src/set_mandelbrot.c src/mlibx_utils.c src/complex_utils.c src/get_fractal.c
+BIN:= bin/set_mandelbrot.o bin/mlibx_utils.o bin/complex_utils.o bin/get_fractal.o
 
 ## MAKE NAME ##
 $(NAME): ${STATIC}
@@ -20,8 +20,9 @@ $(STATIC): ${BIN}
 
 ## MAKE BIN ##
 $(BIN):
+	mkdir -p bin
 	${CC} ${SFLAGS} -c -O3 ${SRC} ${XFLAGS}
-
+	mv *.o bin/
 
 ## REMOVE BIN ##
 clean:

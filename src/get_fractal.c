@@ -1,4 +1,4 @@
-#include "fractol.h"
+#include "../include/fractol.h"
 
 int	get_fractal(t_img img)
 {
