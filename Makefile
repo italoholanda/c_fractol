@@ -7,7 +7,7 @@ XFLAGS:= -lm -lbsd -lmlx -lXext -lX11
 ## DOCUMENT ##
 STATIC:= fractol.a
 MAIN:= main.c
-SRC:= mandelbrot.c mlibx.c complex.c
+SRC:= mandelbrot.c mlibx.c complex.c get_fractal.c
 BIN:= ${SRC:.c=.o}
 
 ## MAKE NAME ##
