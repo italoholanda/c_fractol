@@ -6,13 +6,13 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:45 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/04 17:17:29 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:25:07 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int main(void)
+int	main(void)
 {
 	t_mlx	mlx;
 	t_img	img;

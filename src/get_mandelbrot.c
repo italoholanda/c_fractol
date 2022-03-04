@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_mandelbrot.c                                   :+:      :+:    :+:   */
+/*   get_mandelbrot.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:37:04 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/04 17:19:43 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:28:33 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ int	mandelbrot_pixel_put(t_img img, t_pos n_complex, int cw, int ch)
 		if (aux.a * aux.a + aux.b * aux.b > 4)
 		{
 			mlx_draw_pixel(&img, (int)cw, (int)ch, 0x00FFFFFF);
-			break;
+			break ;
 		}
 		mlx_draw_pixel(&img, (int)cw, (int)ch, 0x00000000);
 		count++;
 	}
-	return 0;
+	return (0);
 }
 
 int	get_mandelbrot(t_img img)
@@ -44,8 +44,8 @@ int	get_mandelbrot(t_img img)
 	int		cw;
 	int		ch;
 	int		sf;
-	t_pos	v_whconvertToComplex;
-	t_pos	n_complex;
+	t_pos	tmp_complex;
+	t_pos	num_complex;
 
 	cw = 0;
 	ch = 0;
@@ -54,16 +54,14 @@ int	get_mandelbrot(t_img img)
 	{
 		while (cw < SW)
 		{
-			v_whconvertToComplex = get_complex_conversion(sf, cw, ch);
-			n_complex.a = v_whconvertToComplex.a;
-			n_complex.b = v_whconvertToComplex.b;
-
-			mandelbrot_pixel_put(img, n_complex, cw, ch);
+			tmp_complex = get_complex_conversion(sf, cw, ch);
+			num_complex.a = tmp_complex.a;
+			num_complex.b = tmp_complex.b;
+			mandelbrot_pixel_put(img, num_complex, cw, ch);
 			cw++;
 		}
 		cw = 0;
 		ch++;
 	}
-
 	return (0);
 }
