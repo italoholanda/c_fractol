@@ -31,6 +31,8 @@ typedef struct s_pos
 
 // MLX UTILS
 void	draw_pixel_img(t_img *img, int x, int y, int color);
+void	mlx_set_img(t_mlx *mlx, t_img *img);
+void	mlx_set_win(t_mlx *mlx);
 
 // COMPLEX UTILS
 t_pos	get_complex_conversion(double sf, long int w, long int h);
