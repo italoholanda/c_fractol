@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:20 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/04 10:36:22 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/04 17:19:11 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_pos
 }	t_pos;
 
 // MLX UTILS
-void	draw_pixel_img(t_img *img, int x, int y, int color);
+void	mlx_draw_pixel(t_img *img, int x, int y, int color);
 void	mlx_set_img(t_mlx *mlx, t_img *img);
 void	mlx_set_win(t_mlx *mlx);
 
@@ -49,7 +49,7 @@ void	mlx_set_win(t_mlx *mlx);
 t_pos	get_complex_conversion(double sf, long int w, long int h);
 double	get_module(double x, double y);
 
-int	get_fractal(t_img img);
-int	set_mandelbrot(t_img img, t_pos n_complex, int cw, int ch);
+// MANDELBROT
+int	get_mandelbrot(t_img img);
 
 #endif
