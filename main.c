@@ -15,9 +15,12 @@ int main(void)
 	img.img = mlx_new_image(mlx.ptr, SW, SW);
 	img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
 
-	for (int h = 0; h < SW; h++)
+	int w = 0;
+	int h = 0;
+
+	while (h < SW)
 	{
-		for (int w = 0; w < SW; w++)
+		while (w < SW)
 		{
 			aux.a = 0.0;
 			aux.b = 0.0;
@@ -38,7 +41,10 @@ int main(void)
 					break;
 				}
 			}
+			w++;
 		}
+		w = 0;
+		h++;
 	}
 
 	mlx_put_image_to_window(mlx.ptr, mlx.win, img.img, 0, 0);
