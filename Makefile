@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/04 10:36:08 by igomes-h          #+#    #+#              #
+#    Updated: 2022/03/04 10:38:12 by igomes-h         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 ## GENERAL ##
 NAME:= fractol
 CC:= gcc
@@ -7,12 +19,15 @@ XFLAGS:= -lm -lbsd -lmlx -lXext -lX11
 ## DOCUMENT ##
 STATIC:= fractol.a
 MAIN:= src/main.c
-SRC:= src/set_mandelbrot.c src/mlibx_utils.c src/complex_utils.c src/get_fractal.c
-BIN:= bin/set_mandelbrot.o bin/mlibx_utils.o bin/complex_utils.o bin/get_fractal.o
+SRC:= \
+	src/set_mandelbrot.c src/mlibx_utils.c src/complex_utils.c src/get_fractal.c
+BIN:= \
+	bin/set_mandelbrot.o bin/mlibx_utils.o bin/complex_utils.o bin/get_fractal.o
 
 ## MAKE NAME ##
 $(NAME): ${STATIC}
-	${CC} ${SFLAGS} -I -c -O3 -fsanitize=leak ${MAIN} ${STATIC} ${XFLAGS} -o ${NAME}
+	${CC} ${SFLAGS} -I -c -O3 -fsanitize=leak \
+	${MAIN} ${STATIC} ${XFLAGS} -o ${NAME}
 
 ## MAKE STATIC ##
 $(STATIC): ${BIN}
