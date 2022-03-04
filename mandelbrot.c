@@ -1,6 +1,8 @@
 #include "fractol.h"
 
-int	set_mandelbrot(t_img img, int N, t_pos n_complex, int cw, int ch)
+#define MANDELBROT_RECURSION 50
+
+int	set_mandelbrot(t_img img, t_pos n_complex, int cw, int ch)
 {
 	int count;
 	double tempx;
@@ -9,7 +11,7 @@ int	set_mandelbrot(t_img img, int N, t_pos n_complex, int cw, int ch)
 	count = 0;
 	aux.a = 0.0;
 	aux.b = 0.0;
-	while (count < N)
+	while (count < (int)MANDELBROT_RECURSION)
 	{
 		tempx = pow(aux.a, 2) - pow(aux.b, 2) + n_complex.a;
 		aux.b = 2 * aux.a * aux.b + n_complex.b;

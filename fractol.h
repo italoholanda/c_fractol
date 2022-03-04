@@ -37,6 +37,6 @@ t_pos	get_complex_conversion(double sf, long int w, long int h);
 double	get_module(double x, double y);
 
 int	get_fractal(t_img img);
-int	set_mandelbrot(t_img img, int N, t_pos n_complex, int cw, int ch);
+int	set_mandelbrot(t_img img, t_pos n_complex, int cw, int ch);
 
 #endif
