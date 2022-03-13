@@ -6,7 +6,7 @@
 #    By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 10:36:08 by igomes-h          #+#    #+#              #
-#    Updated: 2022/03/12 16:47:30 by igomes-h         ###   ########.fr        #
+#    Updated: 2022/03/13 18:04:15 by igomes-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,10 @@ STATIC:= fractol.a
 MAIN:= src/main.c
 SRC = \
 	src/get_fractal.c src/utils_mlibx.c src/utils_complex.c src/utils_errors.c \
-	src/utils_libft.c src/put_mandelbrot.c src/put_julia.c
+	src/utils_libft.c src/put_mandelbrot.c src/put_julia.c src/utils_colors.c
 BIN = \
 	bin/get_fractal.o bin/utils_mlibx.o bin/utils_complex.o bin/utils_errors.o \
-	bin/utils_libft.o bin/put_mandelbrot.o bin/put_julia.o
+	bin/utils_libft.o bin/put_mandelbrot.o bin/put_julia.o bin/utils_colors.o
 
 ## MAKE NAME ##
 $(NAME): ${STATIC}

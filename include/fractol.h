@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:20 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/12 16:42:22 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/13 18:04:18 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,8 @@ int		get_invalid_args_err(void);
 /* LIBFT                                                                      */
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
+
+/* COLOR                                                                      */
+int		get_color(int count);
 
 #endif
