@@ -6,13 +6,13 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:40:52 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/13 18:03:36 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/20 17:17:30 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	put_mandelbrot(t_img img, t_pos n_complex, int cw, int ch)
+int	put_mandelbrot(t_xdata xdata, t_pos n_complex, int cw, int ch)
 {
 	double	tempx;
 	t_pos	aux;
@@ -28,10 +28,10 @@ int	put_mandelbrot(t_img img, t_pos n_complex, int cw, int ch)
 		aux.a = tempx;
 		if (aux.a * aux.a + aux.b * aux.b > 4)
 		{
-			mlx_draw_pixel(&img, (int)cw, (int)ch, get_color(count));
+			mlx_draw_pixel(&xdata, (int)cw, (int)ch, get_color(count));
 			break ;
 		}
-		mlx_draw_pixel(&img, (int)cw, (int)ch, 0x000000);
+		mlx_draw_pixel(&xdata, (int)cw, (int)ch, 0x000000);
 		count++;
 	}
 	return (0);

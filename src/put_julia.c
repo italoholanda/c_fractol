@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   put_julia.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
+/*   By: conquer <conquer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:41:49 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/12 16:46:39 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/20 17:16:11 by conquer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	put_julia(t_img img, t_pos n_complex, int cw, int ch)
+int	put_julia(t_xdata xdata, t_pos n_complex, int cw, int ch)
 {
 	double	tempx;
 	t_pos	aux;
@@ -28,10 +28,10 @@ int	put_julia(t_img img, t_pos n_complex, int cw, int ch)
 		aux.a = tempx;
 		if (aux.a * aux.a + aux.b * aux.b > 4)
 		{
-			mlx_draw_pixel(&img, (int)cw, (int)ch, 0x00FFFFFF);
+			mlx_draw_pixel(&xdata, (int)cw, (int)ch, 0x00FFFFFF);
 			break ;
 		}
-		mlx_draw_pixel(&img, (int)cw, (int)ch, 0x00000000);
+		mlx_draw_pixel(&xdata, (int)cw, (int)ch, 0x00000000);
 		count++;
 	}
 	return (0);

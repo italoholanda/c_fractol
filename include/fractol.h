@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:20 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/13 18:04:18 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/20 17:17:08 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,16 @@
 # define SW 360
 # define SH 360
 
-typedef struct s_img
+typedef struct s_xdata
 {
-	void	*img;
-	char	*addr;
-	int		bpp;
-	int		line_len;
-	int		endian;
-}	t_img;
-
-typedef struct s_mlx
-{
-	void	*ptr;
-	void	*win;
-}	t_mlx;
+	void	*mlx_ptr;
+	void	*win_ptr;
+	void	*img_ptr;
+	char	*img_addr;
+	int		img_bpp;
+	int		img_endian;
+	int		img_linelen;
+}	t_xdata;
 
 typedef struct s_pos
 {
@@ -42,18 +38,18 @@ typedef struct s_pos
 }	t_pos;
 
 /* MLX UTILS                                                                  */
-void	mlx_draw_pixel(t_img *img, int x, int y, int color);
-void	mlx_set_img(t_mlx *mlx, t_img *img);
-void	mlx_set_win(t_mlx *mlx);
+void	mlx_draw_pixel(t_xdata *xdata, int x, int y, int color);
+void	mlx_set_img(t_xdata *mlx);
+void	mlx_set_win(t_xdata *xdata);
 
 /* COMPLEX UTILS                                                              */
 t_pos	get_complex_conversion(double sf, long int w, long int h);
 double	get_module(double x, double y);
 
 /* MANDELBROT / JULIA                                                         */
-void	get_fractal(t_img img, char *arg);
-int		put_julia(t_img img, t_pos n_complex, int cw, int ch);
-int		put_mandelbrot(t_img img, t_pos n_complex, int cw, int ch);
+void	get_fractal(t_xdata img, char *arg);
+int		put_julia(t_xdata img, t_pos n_complex, int cw, int ch);
+int		put_mandelbrot(t_xdata img, t_pos n_complex, int cw, int ch);
 
 /* ERROR                                                                      */
 int		get_few_args_err(void);
