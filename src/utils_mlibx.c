@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   utils_mlibx.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: conquer <conquer@student.42.fr>            +#+  +:+       +#+        */
+/*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:12:30 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/20 17:15:13 by conquer          ###   ########.fr       */
+/*   Updated: 2022/03/20 18:42:45 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
+#include <stdlib.h>
 
 void	mlx_set_win(t_xdata *xdata)
 {

@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:20 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/20 17:17:08 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/20 19:21:02 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_xdata
 	int		img_bpp;
 	int		img_endian;
 	int		img_linelen;
+	char	*arg;
+	double	sf;
 }	t_xdata;
 
 typedef struct s_pos
@@ -47,9 +49,9 @@ t_pos	get_complex_conversion(double sf, long int w, long int h);
 double	get_module(double x, double y);
 
 /* MANDELBROT / JULIA                                                         */
-void	get_fractal(t_xdata img, char *arg);
+void	get_fractal(t_xdata *xdata);
 int		put_julia(t_xdata img, t_pos n_complex, int cw, int ch);
-int		put_mandelbrot(t_xdata img, t_pos n_complex, int cw, int ch);
+int		put_mandelbrot(t_xdata *xdata, t_pos n_complex, int cw, int ch);
 
 /* ERROR                                                                      */
 int		get_few_args_err(void);
