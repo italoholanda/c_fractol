@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:20 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/20 19:21:02 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 19:29:59 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 
 # define FRACTOL_H
-# define FRACTOL_RECURSION 50
+# define FRACTOL_RECURSION 100
 # define SW 360
 # define SH 360
 
@@ -31,6 +31,8 @@ typedef struct s_xdata
 	int		img_linelen;
 	char	*arg;
 	double	sf;
+	double	move_x;
+	double	move_y;
 }	t_xdata;
 
 typedef struct s_pos
