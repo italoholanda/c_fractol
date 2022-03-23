@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_mandelbrot.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 22:32:12 by igomes-h          #+#    #+#             */
+/*   Updated: 2022/03/22 22:32:34 by igomes-h         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../include/fractol.h"
 
@@ -27,7 +38,6 @@ int	put_mandelbrot(t_xdata *xdata, t_pos n_complex, int cw, int ch)
 	return (0);
 }
 
-
 void	get_mandelbrot(t_xdata *xdata)
 {
 	int		cw;
@@ -50,6 +60,7 @@ void	get_mandelbrot(t_xdata *xdata)
 		cw = 0;
 		ch++;
 	}
-	mlx_put_image_to_window(xdata->mlx_ptr, xdata->win_ptr, xdata->img_ptr, 0, 0);
+	mlx_put_image_to_window(xdata->mlx_ptr, xdata->win_ptr,
+		xdata->img_ptr, 0, 0);
 	mlx_destroy_image(xdata->mlx_ptr, xdata->img_ptr);
 }

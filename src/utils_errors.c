@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 14:25:18 by conquer           #+#    #+#             */
-/*   Updated: 2022/03/22 22:24:30 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 22:35:24 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 int	get_usage(void)
 {
-	int wr;
+	int	wr;
 
-	wr = write(1, "\nFractol usage:\n", sizeof(char)*16),
-	wr = write(1, "./fractol mandelbrot\n", sizeof(char)*21);
-	wr = write(1, "./fractol julia\n", sizeof(char)*16);
+	wr = write(1, "\nFractol usage:\n", sizeof(char) * 16);
+	wr = write(1, "./fractol mandelbrot\n", sizeof(char) * 21);
+	wr = write(1, "./fractol julia\n", sizeof(char) * 16);
 	return (wr);
 }
 
 int	get_few_args_err(void)
 {
-	int wr;
+	int	wr;
 
-	wr = write(1, "[Error]: Too few arguments\n", sizeof(char)*27),
+	wr = write(1, "[Error]: Too few arguments\n", sizeof(char) * 27);
 	get_usage();
 	return (wr);
 }
 
 int	get_invalid_args_err(void)
 {
-	int wr;
+	int	wr;
 
-	wr = write(1, "[Error]: Invalid arguments\n", sizeof(char)*27),
+	wr = write(1, "[Error]: Invalid arguments\n", sizeof(char) * 27);
 	get_usage();
 	return (wr);
 }

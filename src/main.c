@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:45 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/22 22:12:32 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 22:33:06 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	key_hook(int keycode, t_xdata *xdata)
 	return (0);
 }
 
-void get_fractal(t_xdata *xdata)
+void	get_fractal(t_xdata *xdata)
 {
 	if (!ft_strncmp(xdata->arg, "mandelbrot", ft_strlen("mandelbrot")))
 		get_mandelbrot(xdata);
@@ -55,7 +55,7 @@ void get_fractal(t_xdata *xdata)
 
 void	init_app(char *arg)
 {
-	t_xdata *xdata;
+	t_xdata	*xdata;
 
 	xdata = (t_xdata *) malloc (sizeof (t_xdata));
 	xdata->mlx_ptr = mlx_init();

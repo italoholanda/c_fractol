@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:20 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/22 22:16:58 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 22:36:27 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_pos
 /* MLX UTILS                                                                  */
 void	mlx_draw_pixel(t_xdata *xdata, int x, int y, int color);
 t_pos	move_screen(t_pos aux, t_xdata *xdata);
-int	mlx_safe_exit(t_xdata *xdata);
+int		mlx_safe_exit(t_xdata *xdata);
 
 /* COMPLEX UTILS                                                              */
 t_pos	get_complex_conversion(double sf, long int w, long int h);
