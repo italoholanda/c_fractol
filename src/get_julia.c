@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 22:29:17 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/22 22:31:57 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 22:45:28 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ void	get_julia(t_xdata *xdata)
 	}
 	mlx_put_image_to_window(xdata->mlx_ptr, xdata->win_ptr,
 		xdata->img_ptr, 0, 0);
+	mlx_destroy_image(xdata->mlx_ptr, xdata->img_ptr);
 }

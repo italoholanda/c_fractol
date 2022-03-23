@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:12:30 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/22 22:14:12 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 22:43:35 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	mlx_safe_exit(t_xdata *xdata)
 {
 	mlx_destroy_window(xdata->mlx_ptr, xdata->win_ptr);
 	mlx_destroy_display(xdata->mlx_ptr);
+	free(xdata->win_ptr);
+	free(xdata->mlx_ptr);
 	exit (0);
 }
 
