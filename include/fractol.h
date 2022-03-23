@@ -6,7 +6,7 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:36:20 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/22 19:29:59 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 22:16:58 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # include <mlx.h>
 # include <math.h>
 # include <stdio.h>
+# include <unistd.h>
 
 # define FRACTOL_H
 # define FRACTOL_RECURSION 100
@@ -43,8 +44,8 @@ typedef struct s_pos
 
 /* MLX UTILS                                                                  */
 void	mlx_draw_pixel(t_xdata *xdata, int x, int y, int color);
-void	mlx_set_img(t_xdata *mlx);
-void	mlx_set_win(t_xdata *xdata);
+t_pos	move_screen(t_pos aux, t_xdata *xdata);
+int	mlx_safe_exit(t_xdata *xdata);
 
 /* COMPLEX UTILS                                                              */
 t_pos	get_complex_conversion(double sf, long int w, long int h);
@@ -52,12 +53,15 @@ double	get_module(double x, double y);
 
 /* MANDELBROT / JULIA                                                         */
 void	get_fractal(t_xdata *xdata);
-int		put_julia(t_xdata img, t_pos n_complex, int cw, int ch);
+void	get_mandelbrot(t_xdata *xdata);
 int		put_mandelbrot(t_xdata *xdata, t_pos n_complex, int cw, int ch);
+void	get_julia(t_xdata *xdata);
+void	put_julia(t_xdata *xdata, t_pos num_complex, int w, int h);
 
 /* ERROR                                                                      */
 int		get_few_args_err(void);
 int		get_invalid_args_err(void);
+int		check_args(char *arg);
 
 /* LIBFT                                                                      */
 size_t	ft_strlen(const char *str);

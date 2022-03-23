@@ -6,24 +6,27 @@
 /*   By: igomes-h <italogholanda@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 10:12:30 by igomes-h          #+#    #+#             */
-/*   Updated: 2022/03/20 18:42:45 by igomes-h         ###   ########.fr       */
+/*   Updated: 2022/03/22 22:14:12 by igomes-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 #include <stdlib.h>
 
-void	mlx_set_win(t_xdata *xdata)
+t_pos	move_screen(t_pos aux, t_xdata *xdata)
 {
-	xdata->mlx_ptr = mlx_init();
-	xdata->win_ptr = mlx_new_window(xdata->mlx_ptr, SW, SW, "Fractal");
+	if (xdata->move_x)
+		aux.a += xdata->move_x;
+	if (xdata->move_y)
+		aux.b += xdata->move_y;
+	return (aux);
 }
 
-void	mlx_set_img(t_xdata *xdata)
+int	mlx_safe_exit(t_xdata *xdata)
 {
-	xdata->img_ptr = mlx_new_image(xdata->mlx_ptr, SW, SW);
-	xdata->img_addr = mlx_get_data_addr(xdata->img_ptr, &xdata->img_bpp, &xdata->img_linelen,
-			&xdata->img_endian);
+	mlx_destroy_window(xdata->mlx_ptr, xdata->win_ptr);
+	mlx_destroy_display(xdata->mlx_ptr);
+	exit (0);
 }
 
 void	mlx_draw_pixel(t_xdata *xdata, int x, int y, int color)
